@@ -68,7 +68,7 @@ todos los inversores.
 
 El modelo CAPM se formula de la siguiente manera:
 
-![](media\image1.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image1.png) 
 
 Donde 𝐸(𝑅𝑖) es la rentabilidad esperada del activo estudiado, 𝑅𝑓 es la
 rentabilidad del activo libre de riesgo para el mercado en el que se
@@ -104,7 +104,7 @@ objeto de estudio y la rentabilidad del mercado con la varianza del
 mercado, la cual representa la volatilidad de dicho mercado. A raíz de
 esto, este factor puede estimarse mediante la siguiente expresión:
 
-![](media\image2.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image2.png)
 
 Es menester destacar que, en dichos modelos, la contribución de cada
 activo al riesgo (desvío estándar) del portafolio no depende únicamente
@@ -123,7 +123,7 @@ Se calcula dividiendo la rentabilidad de un fondo menos la tasa de
 interés sin riesgo entre la volatilidad o desviación estándar de esa
 rentabilidad en el mismo periodo.
 
-![](media\image3.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image3.png)
 
 Otro ratio muy popular, y primo hermano del Sharpe, es el ratio de
 Sortino. Como se observa, la fórmula es prácticamente igual, con la
@@ -131,7 +131,7 @@ salvedad de que utiliza como medida de ajuste del riesgo únicamente la
 desviación estándar generada por los rendimientos negativos de la
 cartera.
 
-![](media\image4.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image4.png)
 
 ###**Metodología y datos utilizados para el trabajo**
 
@@ -183,7 +183,7 @@ riesgo (2.5% anual) y el 20% en la estrategia de gestión activa.
 
 ###**Trabajo realizado**
 
-![](media\image5.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image5.png)
 
 Como primeros pasos, importamos las
 librerías de Python que utilizaremos y traemos los 500 tickers del
@@ -200,14 +200,14 @@ solamente utilizamos aquellos que tengan mas de 1250 datos (250 ruedas
 búrsatiles por año, trabajamos con papeles que hayan estado presentes en
 5 de los 20 años del período de análisis).
 
-![](media\image6.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image6.png)
 
 Tal cual mencionamos anteriormente, las carteras estarán compuestas por
 5 activos con ponderaciones mínimas individuales de 5% y máximas del
 50%. Utilizamos la distribución de Dirichlet para calcular
 aleatoriamente estas ponderaciones
 
-![](media\image7.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image7.png)
 
 Ahora bien, definimos la función de optimización y ordenamos los
 portafolios obtenidos en base a un ratio de sharpe modificado (Simple,
@@ -217,13 +217,13 @@ De los tickers del SP500, toma de a 5 al azar (muestra).
 
 Tiro 100 valores posibles de ponderaciones al azar, y tomo la primera.
 
-![](media\image8.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image8.png)
 
 Definimos los trimestres en el período de tiempo a analizar
 
-![](media\image9.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image9.png)
 
-![](media\image10.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image10.png)
 
 Realizamos un DataFrame para obtener los
 retornos logarítmicos de cada activo del sp500
@@ -232,14 +232,14 @@ Utilizamos Montecarlo para la generación de variables aleatorias, iterar
 y armar 25000 combinaciones al azar, las cuáles ordenamos de acuerdo a
 nuestro Ratio de Sharpe Simplificado.
 
-![](media\image11.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image11.png)
 
 Observamos cuales fueron los tickers que más se repitieron, para armar
 portafolios con los papeles de mejores retornos.
 
-![](media\image12.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image12.png)
 
-![](media\image13.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image13.png)
 
 Ahora bien, a continuación, nuevamente con
 Montecarlo, generamos variables aleatorias a partir de una cantidad
@@ -256,7 +256,7 @@ insertarlo en la función de optimización para los 83 trimestres. Corro
 83 veces lo mismo que hicimos antes, pero con una cantidad inicial de
 500 portafolios y 5 sesiones de entrenamiento.
 
-![](media\image14.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image14.png)
 
 Trimestre a trimestre va a ir generando
 aleatoriamente los 10 portafolios ideales.
@@ -265,24 +265,24 @@ Continuamos definiendo dos listas, una con los 83 portafolios top ten, y
 otra con las 83 ponderaciones. Luego, observamos en un dataframe como
 rindieron cada uno de esos 10 mejores portafolios.
 
-![](media\image15.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image15.png)
 
 
 Comparamos con el Benchmark definido (SPY):
 
-![](media\image16.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image16.png)
 
 Definimos una estrategia con el promedio de los TOP10, para su
 comparación contra el benchmark definido, utilizando el reporte
 estadístico de quantstats
 
-![](media\image17.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image17.png)
 
 
-![](media\image18.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image18.png)
 
 
-![](media\image19.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image19.png)
 
 
 A priori, observamos que, si bien el retorno acumulado y el CAGR son
@@ -297,15 +297,15 @@ nuestra cartera. Invertiremos el 20% en riesgo (gestión activa de
 cartera en base a momentum) y el 80% a una supuesta tasa libre de riesgo
 del 2.5% anual.
 
-![](media\image20.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image20.png)
 
 Corremos el reporte estadístico completo, y observamos que mejoran considerablemente los problemas que teníamos anteriormente (Drawdown).
 
-![](media\image21.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image21.png)
 
 Además, tanto el Sharpe como el Sortino, aumentan.
 
-![](media\image22.png)
+![Alt text](https://github.com/guillermobr/ucema_tp_opt_portafolio/blob/main/media/image22.png)
 
 
 ### **CONCLUSIONES**
